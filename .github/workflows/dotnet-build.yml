@@ -3,7 +3,7 @@ name: CI Workflow
 # Define quando o workflow deve ser acionado
 on:
   push:
-    branches:["main"] 
+    branches: ["main"] 
   schedule:
     - cron: '0 * * * *' # Executa a cada hora
 
