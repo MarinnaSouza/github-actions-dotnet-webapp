@@ -1,0 +1,27 @@
+name: CI Workflow
+
+# Define quando o workflow deve ser acionado
+on:
+  push:
+    branches:["main"] 
+  schedule:
+    - cron: '0 * * * *' # Executa a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Action pré-existente do GitHub: Checkout do repositório
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Script personalizado: Exemplo de um script simples
+    - name: Run custom script
+      run: echo "Running custom script"
+        
+    # Action pré-existente do GitHub: Configuração do Python
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
